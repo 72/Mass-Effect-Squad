@@ -136,7 +136,7 @@ contract Squad is ERC721Enumerable, ReentrancyGuard, Ownable {
         "Infiltrator",
         "Assassin",
         "Thief",
-        "Bounty hunter",
+        "Bounty Hunter",
         "Sentinel",
         "Vanguard"
     ];
@@ -172,7 +172,7 @@ contract Squad is ERC721Enumerable, ReentrancyGuard, Ownable {
         string memory output = sourceArray[rand % sourceArray.length];
         uint256 greatness = rand % 21;
         if (greatness > 4) {
-            output = string(abi.encodePacked(class[rand % class.length], " ", output));
+            output = string(abi.encodePacked(output, " ", class[rand % class.length]));
         }
         if (greatness > 13) {
             string memory clan = clan[rand % clan.length];
